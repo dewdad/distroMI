@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JToolBar;
 import javax.swing.TransferHandler;
 
+import org.openmarkov.core.gui.loader.element.IconLoader;
+
 import editor.EditorActions.*;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -174,5 +176,9 @@ public class SchemaEditorToolBar extends JToolBar
 				}
 			}
 		});
+		// adding inference mode
+		addSeparator();
+		add(editor.bind("Inference", new InferingAction(),
+				"/com/mxgraph/examples/swing/images/inference_mode.png"));
 	}
 }

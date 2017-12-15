@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.http.client.methods.HttpGet;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.olingo.client.api.ODataClient;
 import org.apache.olingo.client.api.communication.request.cud.ODataDeleteRequest;
 import org.apache.olingo.client.api.communication.request.cud.ODataEntityCreateRequest;
@@ -38,11 +37,6 @@ import org.apache.olingo.client.api.serialization.ODataDeserializerException;
 import org.apache.olingo.client.core.ODataClientFactory;
 import org.apache.olingo.client.core.http.BasicAuthHttpClientFactory;
 import org.apache.olingo.commons.api.edm.Edm;
-import org.apache.olingo.commons.api.edm.EdmComplexType;
-import org.apache.olingo.commons.api.edm.EdmEntityType;
-import org.apache.olingo.commons.api.edm.EdmProperty;
-import org.apache.olingo.commons.api.edm.EdmSchema;
-import org.apache.olingo.commons.api.edm.FullQualifiedName;
 import org.apache.olingo.commons.api.format.ContentType;
 
 public class OdataClientHandler {
@@ -209,6 +203,19 @@ public class OdataClientHandler {
 				.appendKeySegment(keyValue).expand(expandRelationName).build();
 		return readEntity(edm, absoluteUri);
 	}
+	
+	public ClientEntity readEntityWithSelect(Edm edm, String entitySetName, 
+			List<String> selectProperties) {
+		URI absoluteUri = client.newURIBuilder(serviceUrl).appendEntitySetSegment(entitySetName)
+				.select(StringUtils.join(selectProperties, ',')).build();
+		return readEntity(edm, absoluteUri);
+	}
+	
+	public ClientEntitySetIterator<ClientEntitySet, ClientEntity> readEntitiesWithSelect(Edm edm,	String entitySetName,List<String> selectProperties) {
+		String[] selectString = selectProperties.toArray(new String[0]);
+		URI absoluteUri = client.newURIBuilder(serviceUrl).appendEntitySetSegment(entitySetName).select(selectString).build();
+		return readEntities(edm, absoluteUri);
+	}
 
 	private ClientEntity readEntity(Edm edm, URI absoluteUri) {
 		ODataEntityRequest<ClientEntity> request = client.getRetrieveRequestFactory().getEntityRequest(absoluteUri);
@@ -274,6 +281,7 @@ public class OdataClientHandler {
 	  return req;
 	}
 	 
+
 
 //	 void perform(String serviceUrl) throws Exception {
 //		// Add AuthCache to the execution context

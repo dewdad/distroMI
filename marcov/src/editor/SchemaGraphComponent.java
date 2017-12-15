@@ -150,7 +150,7 @@ public class SchemaGraphComponent extends mxGraphComponent
 		return null;
 	}
 
-	private GraphElementsSelector getElementSelector() {
+	public GraphElementsSelector getElementSelector() {
 		if (elementSelector == null) elementSelector = new GraphElementsSelector();
 		return elementSelector;
 	}

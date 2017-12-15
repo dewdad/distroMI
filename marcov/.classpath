@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/com.fasterxml.jackson.core-jackson-annotations-2.7.8.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/com.fasterxml.jackson.core-jackson-core-2.7.8.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/com.fasterxml.jackson.core-jackson-databind-2.7.8.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/com.fasterxml.jackson.dataformat-jackson-dataformat-xml-2.7.8.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/com.fasterxml.jackson.module-jackson-module-jaxb-annotations-2.7.8.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/com.fasterxml-aalto-xml-0.9.10.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/commons-codec-commons-codec-1.9.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/commons-io-commons-io-2.4.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/commons-logging-commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/org.apache.commons-commons-lang3-3.3.2.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/org.apache.httpcomponents-httpclient-4.2.6.jar" sourcepath="C:/Temp/marcov/lib/httpcomponents-client-4.2.6-src.zip"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/org.apache.httpcomponents-httpcore-4.2.5.jar" sourcepath="C:/Temp/marcov/lib/httpcomponents-core-4.2.5-src.zip"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/org.codehaus.woodstox-stax2-api-3.1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Temp/marcov/lib/org.slf4j-slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/com.fasterxml.jackson.core-jackson-annotations-2.7.8.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/com.fasterxml.jackson.core-jackson-core-2.7.8.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/com.fasterxml.jackson.core-jackson-databind-2.7.8.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/com.fasterxml.jackson.dataformat-jackson-dataformat-xml-2.7.8.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/com.fasterxml.jackson.module-jackson-module-jaxb-annotations-2.7.8.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/com.fasterxml-aalto-xml-0.9.10.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/commons-codec-commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/commons-io-commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/commons-logging-commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/org.apache.commons-commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/org.apache.httpcomponents-httpclient-4.2.6.jar" sourcepath="C:/Temp/marcov/lib/httpcomponents-client-4.2.6-src.zip"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/org.apache.httpcomponents-httpcore-4.2.5.jar" sourcepath="C:/Temp/marcov/lib/httpcomponents-core-4.2.5-src.zip"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/org.codehaus.woodstox-stax2-api-3.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/org.slf4j-slf4j-api-1.7.7.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/olingo"/>
@@ -21,5 +21,11 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/jgrapht-core"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jgrapht-io"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jgrapht-ext"/>
+	<classpathentry kind="lib" path="lib"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/OpenMarkov"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/swing-layout-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/Olingo-OData-Server-for-Java-4.4.0-lib.zip"/>
+	<classpathentry kind="lib" path="C:/git/marcov/lib/Olingo-OData-Server-Extension-for-Java-4.4.0-lib.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

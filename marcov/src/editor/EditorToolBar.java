@@ -11,8 +11,12 @@ import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.TransferHandler;
+
+import org.openmarkov.core.gui.loader.element.IconLoader;
+import org.openmarkov.core.gui.menutoolbar.common.ActionCommands;
 
 import editor.EditorActions.*;
 
@@ -40,6 +44,8 @@ public class EditorToolBar extends JToolBar
 	 * @param orientation
 	 */
 	private boolean ignoreZoomChange = false;
+
+    
 
 	/**
 	 * 
@@ -268,5 +274,6 @@ public class EditorToolBar extends JToolBar
 				}
 			}
 		});
+
 	}
 }

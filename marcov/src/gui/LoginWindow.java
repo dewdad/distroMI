@@ -21,10 +21,10 @@ public class LoginWindow extends JFrame implements ActionListener {
 	JLabel label1, label2,label3;
 	JTextField userText, passText,uri;
 	JCheckBox authenticationEnabled;
-//	String serviceUrl =  "https://api.devpersistent.iot-accelerator.ericsson.net/occhub/proxy/appiot/odatav2/34bb4075-753b-4209-a79d-ca347b615c63";
-	String serviceUrl = "http://services.odata.org/V4/OData/OData.svc/";
-	String username = "AnalyticsApplication@AnalyticsUser";
-	String password = "9AS+kRXd9K3oupdISlAoGAI4uY%asR-E";
+	String serviceUrl =  "https://api.devpersistent.iot-accelerator.ericsson.net/occhub/proxy/appiot/odatav2/34bb4075-753b-4209-a79d-ca347b615c63";
+//	String serviceUrl = "http://services.odata.org/V4/OData/OData.svc/";
+	String username = "analyticsApplication@analyticsUser";
+	String password = "@@x+D!9AXbD6+R9!U3mPDzq@MyknGTw@";
 
 	public LoginWindow() {
 		
@@ -88,8 +88,9 @@ public class LoginWindow extends JFrame implements ActionListener {
 
 		} 
 		catch (Exception e) {
-			System.out.printf("%s :enter the valid username and password",e.getMessage());
-			JOptionPane.showMessageDialog(this, "Incorrect login or password", "Error", JOptionPane.ERROR_MESSAGE);
+			System.out.printf("%s :service connection failed",e.getMessage());
+			JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+			actionPerformed(ae);
 		}
 	}
 }

@@ -2,7 +2,22 @@ package graph;
 
 import java.util.List;
 
-public class ValueElementDiscretization {
+public abstract class ValueElementDiscretization {
+	
+	public class ValueVariationDiscretization extends ValueElementDiscretization{
+		private double variationRate;
+		@Override
+		public boolean getValue(List<Double> rawValues) {
+			double min= Double.MAX_VALUE;
+			double max = Double.MIN_VALUE;
+			for (double rawValue : rawValues) {
+				if (rawValue < min) min = rawValue;
+				if (rawValue > min) max = rawValue;
+			}
+			boolean value = ((max - min )/max) > variationRate;
+			return value;
+		}	
+	}
 	
 	
 	public enum DiscretizationMethod {
@@ -11,16 +26,6 @@ public class ValueElementDiscretization {
 		CATEGORIES
 	}
 
-	
-	public ValueElementDiscretization(DiscretizationMethod aMethod) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public static ValueElementDiscretization getDefault() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 	public static DiscretizationMethod[] getDiscretizationMethodsName(){
 		return DiscretizationMethod.values();
 	}
@@ -30,5 +35,6 @@ public class ValueElementDiscretization {
 		return null;
 	}
 	
+	abstract public boolean getValue(List<Double> rawValues);
 	
 }

@@ -1,8 +1,11 @@
 package graph;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 import org.jgrapht.ListenableGraph;
 import org.jgrapht.graph.DefaultListenableGraph;
@@ -75,6 +78,26 @@ public class GraphElementsSelector {
 
 	public <V, E> ListenableGraph<V, E> commit(){		
 		return (ListenableGraph<V, E>) EdmGraphManager.getEdmInitialGraph(elements);	
+	}
+
+	public boolean hasSelections() {
+		return !elements.isEmpty();
+	}
+
+	public List<String> getHeaders() {
+		LinkedList<String> stringlist = new LinkedList<>();
+		for (GraphElement element:elements.values()) {
+			stringlist.addAll(element.getProperties());
+		}
+		return stringlist;
+	}
+	
+	public  Set<Object> getSelectedTables() {
+		return elements.keySet();
+	}
+
+	public HashMap<Object, GraphElement> getSelectedElements() {
+		return elements;
 	}
 }
 
